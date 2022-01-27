@@ -1,5 +1,5 @@
 import React, { useEffect }  from 'react';
-import { capitalizeFirstLetter } from "../../utils/helpers";
+// import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function  Nav (props) {
     const {
@@ -8,7 +8,7 @@ function  Nav (props) {
         currentCategory
     } = props;
     useEffect(() => {
-        document.title = capitalizeFirstLetter(currentCategory.name);
+        document.title = currentCategory.name;
     }, [currentCategory]);
 
     return (
@@ -36,10 +36,10 @@ function  Nav (props) {
                         }`} key={category.name}>
                             <span
                                 onClick={() => {
-                                    setCurrentCategory(category.name)
+                                    setCurrentCategory(category)
                                 }}
                             >
-                                {capitalizeFirstLetter(category.name)}
+                                {category.name}
                             </span>
                         </li>
                     ))}
